@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.taskmate.dao.TTaskDao">
+
+	<!-- Tタスクテーブル一覧 取得 -->
+	<select id="selectAll" resultType="com.example.taskmate.entity.TTask">
+		SELECT
+			task_id, task_name, limit_date, status_code, remarks
+		FROM t_task
+		ORDER BY
+			task_id
+	</select>
+
+	<select id="getTaskList" resultType="com.example.taskmate.bean.TaskListBean">
+		SELECT
+			TT.task_id,
+			TT.task_name,
+			TT.limit_date,
+			MS.status_name
+		FROM
+			t_task TT
+		INNER JOIN m_status MS ON
+			TT.status_code = MS.status_code
+	</select>
+
+</mapper>
