@@ -14,19 +14,18 @@
 </form>
 
 <!-- ------------一覧---------------- -->
-<div th:if="${taskEntityList} != null">
+<div th:if="${taskList} != null">
 	<h2>タスク一覧</h2>
 
 	<table class="task-list">
 		<tr>
-			<th>タスクID</th><th>タスク名</th><th>期限</th><th>ステータス</th><th>メモ</th>
+			<th>タスクID</th><th>タスク名</th><th>期限</th><th>ステータス</th>
 		</tr>
-		<tr th:each="task : ${taskEntityList}">
+		<tr th:each="task : ${taskList}">
 			<td th:text="${task.taskId}"></td>
 			<td th:text="${task.taskName}"></td>
 			<td th:text="${task.limitDate}"></td>
-			<td th:text="${task.statusCode}"></td>
-			<td th:text="${task.remarks}"></td>
+			<td th:text="${task.statusName}"></td>
 		</tr>
 
 	</table>
