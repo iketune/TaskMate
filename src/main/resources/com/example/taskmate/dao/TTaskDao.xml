@@ -16,11 +16,19 @@
 			TT.task_id,
 			TT.task_name,
 			TT.limit_date,
-			MS.status_name
+			MS.status_name,
+			COUNT(TM.memo_id) memo_cnt
 		FROM
 			t_task TT
 		INNER JOIN m_status MS ON
 			TT.status_code = MS.status_code
+		LEFT JOIN t_memo TM ON
+			TT.task_id = TM.task_id
+		GROUP BY
+			TT.task_id,
+			TT.task_name,
+			TT.limit_date,
+			MS.status_name
 	</select>
 
 </mapper>
