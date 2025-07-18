@@ -11,5 +11,6 @@ public class TaskListBean {
 	private String taskName;
 	private Date limitDate;
 	private String statusName;
+	private Integer memoCnt;
 
 }
