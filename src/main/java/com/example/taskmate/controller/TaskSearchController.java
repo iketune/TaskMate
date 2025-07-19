@@ -18,6 +18,11 @@ public class TaskSearchController {
 
 	private final TaskService taskService;
 
+	@GetMapping("/")
+	private String redirectTop() {
+		return "redirect:/top";
+	}
+
 	/* 最初のリクエスト */
 	@GetMapping("/top")
 	private String showListSelection() {

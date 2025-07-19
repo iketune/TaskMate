@@ -1,15 +1,13 @@
-package com.example.taskmate.dao;
+package com.example.taskmate.service;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import com.example.taskmate.entity.MStatus;
 
-@Mapper
-public interface MStatusDao {
-
+public interface StatusService {
+	
 	/** Mステータステーブル一覧 取得 */
 	List<MStatus> selectAll();
 	
